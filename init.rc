@@ -395,6 +395,7 @@ on post-fs-data
     mkdir /data/security/good 0700 system system
     mkdir /data/security/stig 0700 system system
     mkdir /data/security/mycontainer 0700 system system
+    mkdir /data/security/aasa 0711 system system
 
     # If there is no fs-post-data action in the init.<device>.rc file, you
     # must uncomment this line, otherwise encrypted filesystems
@@ -1320,12 +1321,12 @@ service media /system/bin/mediaserver
 service apaservice /system/bin/apaservice
     class main
     user jack
-    group system inet sdcard_rw sdcard_r media_rw shell
+    group inet sdcard_rw sdcard_r media_rw shell
 
 service jackservice /system/bin/jackservice
     class main
     user jack
-    group system audio inet shell
+    group audio inet shell
 
 service powersnd /system/bin/samsungpowersoundplay
     class main
